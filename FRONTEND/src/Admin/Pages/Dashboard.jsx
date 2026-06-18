@@ -110,10 +110,10 @@ function Dashboard() {
           </div>
         </div>
         {/* recents applicants */}
-        <div className="flex h-full min-h-[60vh] w-full flex-col gap-y-5 px-5">
-          <div className="flex h-[5%] items-center text-sm">
-            Recent Applicants
-          </div>
+        <div className="flex h-[5vh] w-screen items-center px-5">
+          <span className="w-full text-sm">Recent Applications</span>
+        </div>
+        <div className="flex h-full min-h-[60%] w-full flex-col gap-y-5 px-[2%]">
           <div className="h-[90%]">
             <RecentAppTable columns={RecentAppColumns} data={applicants} />
           </div>
