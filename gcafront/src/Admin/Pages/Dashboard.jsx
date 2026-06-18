@@ -191,37 +191,37 @@ function Dashboard() {
           <span className="w-full text-sm">Summary</span>
         </div>
         <div className="flex h-full w-full flex-col items-center">
-          {/* dashboard cards */}
-          <div className="flex h-[30vh] w-auto gap-x-3 lg:hidden">
-            <div className="flex flex-col gap-y-3">
-              <DCard
-                label={"Total Students this Year"}
-                Icon={<GraduationCap className="min-h-8 min-w-8" />}
-                value={120}
-              />
-              <DCard
-                label={"Total Applicants this Year"}
-                Icon={<FileUser className="h-8 w-8" />}
-                value={38}
-              />
-            </div>
-
-            <div className="flex flex-col gap-y-3">
-              <DCard
-                label={"Submissions to Evaluate"}
-                Icon={<FileUser className="h-8 w-8" />}
-                value={5}
-              />
-              <DCard
-                label={"Total Applicants"}
-                Icon={<FileUser className="h-8 w-8" />}
-                value={244}
-              />
-            </div>
+          {/* summary */}
+          <div className="flex h-auto w-full flex-wrap justify-center-safe gap-5">
+            <DCard
+              label={"Accepted Students"}
+              Icon={<GraduationCap className="min-h-8 min-w-8" />}
+              value={20}
+            />
+            <DCard
+              label={"Pending Applications"}
+              Icon={<FileUser className="h-8 w-8" />}
+              value={40}
+            />
+            <DCard
+              label={"Male Students"}
+              Icon={<Mars className="h-8 w-8" />}
+              value={10}
+            />
+            <DCard
+              label={"Female Students"}
+              Icon={<Venus className="h-8 w-8" />}
+              value={8}
+            />
+            <DCard
+              label={"Disabled Students"}
+              Icon={<Accessibility className="h-8 w-8" />}
+              value={2}
+            />
           </div>
         </div>
         {/* recents applicants */}
-        <div className="flex h-full w-full flex-col gap-y-5 px-5">
+        <div className="flex h-full min-h-[60vh] w-full flex-col gap-y-5 px-5">
           <div className="flex h-[5%] items-center text-sm">
             Recent Applicants
           </div>
