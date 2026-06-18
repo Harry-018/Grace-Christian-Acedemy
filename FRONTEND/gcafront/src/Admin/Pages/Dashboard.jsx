@@ -220,50 +220,6 @@ function Dashboard() {
             </div>
           </div>
         </div>
-
-        {/* charts */}
-        <div className="flex h-full w-full flex-col gap-y-5">
-          <div className="flex h-[5vh] w-screen items-center px-5">
-            <span className="w-full text-sm">Charts</span>
-          </div>
-          {/* piecharts */}
-
-          <div className="no-scrollbar flex h-[21vh] w-full justify-center-safe gap-x-5 overflow-x-auto px-5">
-            <GenderChart
-              title={genderTitle}
-              chartLabel={genderLabel}
-              options={options}
-              dataValue={genderDataValues}
-              colors={colors}
-            />
-
-            <ApplicantChart
-              title={applicantTitle}
-              chartLabel={applicantLabel}
-              options={options}
-              dataValue={applicantDataValues}
-              colors={colors}
-            />
-          </div>
-
-          {/* barcharts */}
-          <div className="no-scrollbar flex h-[31vh] w-full justify-center-safe gap-x-5 overflow-x-auto px-5">
-            <ClassChart
-              title={classSectionTitle}
-              chartLabel={classSectionLabel}
-              options={optionsBar}
-              dataValue={classSectionDataValues}
-              colors={colors}
-            />
-            <ClassChart
-              title={classSectionTitle}
-              chartLabel={classSectionLabel}
-              options={optionsBar}
-              dataValue={classSectionDataValues}
-              colors={colors}
-            />
-          </div>
-        </div>
         {/* recents applicants */}
         <div className="flex h-full w-full flex-col gap-y-5 px-5">
           <div className="flex h-[5%] items-center text-sm">
