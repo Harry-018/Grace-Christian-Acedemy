@@ -195,6 +195,9 @@ function Teachers() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
+              <span className="h-10 w-20">
+                <CreateButton onClick={() => setAddModal(true)} label={"Add"} />
+              </span>
             </span>
           </div>
 

@@ -64,124 +64,6 @@ function Dashboard() {
     }
   };
 
-  //gender function
-  const genderCounts = StudentData.reduce((sum, student) => {
-    const gender = student.gender || "Unknown";
-    sum[gender] = (sum[gender] || 0) + 1;
-    return sum;
-  }, {});
-
-  //tuition function
-  const tuitionCounts = StudentData.reduce((sum, student) => {
-    const tuition = student.tuition || "Unknown";
-    sum[tuition] = (sum[tuition] || 0) + 1;
-    return sum;
-  }, {});
-
-  //applicant function
-  const applicantCounts = StudentData.reduce((sum, student) => {
-    const applicant = student.applicationstatus || "Unknown";
-    sum[applicant] = (sum[applicant] || 0) + 1;
-    return sum;
-  }, {});
-
-  //grade level function
-  const gradeLevelCounts = StudentData.reduce((sum, student) => {
-    const gradeLevel = student.gradelevel || "Unknown";
-    sum[gradeLevel] = (sum[gradeLevel] || 0) + 1;
-    return sum;
-  }, {});
-
-  //class section function
-  const classSectionCounts = StudentData.reduce((sum, student) => {
-    const classSection = student.classsection || "Unknown";
-    sum[classSection] = (sum[classSection] || 0) + 1;
-    return sum;
-  }, {});
-
-  //student per year function
-  const stdPerYearCounts = StudentData.reduce((sum, student) => {
-    const stdPerYear = student.enrolledyear || "Unknown";
-    sum[stdPerYear] = (sum[stdPerYear] || 0) + 1;
-    return sum;
-  }, {});
-
-  //gender
-  const genderTitle = "Students per Gender";
-  const genderLabel = Object.keys(genderCounts); // ['Male', 'Female']
-  const genderDataValues = Object.values(genderCounts); // [5, 5]
-
-  //tuition
-  const tuitionTitle = "Tuition Status";
-  const tuitionLabel = Object.keys(tuitionCounts); // ['Paid', 'Unpaid']
-  const tuitionDataValues = Object.values(tuitionCounts); // [5, 5]
-
-  //applicant
-  const applicantTitle = "Applicants Summary";
-  const applicantLabel = Object.keys(applicantCounts); // ['Pending', 'Rejected', 'Accepted']
-  const applicantDataValues = Object.values(applicantCounts); // [5, 5]
-
-  //gradelevel
-  const gradelevelTitle = "Students per Grade Level";
-  const gradelevelLabel = Object.keys(gradeLevelCounts); // ['Male', 'Female']
-  const gradelevelDataValues = Object.values(gradeLevelCounts); // [5, 5]
-
-  //class section level
-  const classSectionTitle = "Students per Section";
-  const classSectionLabel = Object.keys(classSectionCounts); // ['Male', 'Female']
-  const classSectionDataValues = Object.values(classSectionCounts); // [5, 5]
-
-  //students per year
-  const stdPerYearTitle = "Students per Year";
-  const stdPerYearLabel = Object.keys(stdPerYearCounts); // ['Male', 'Female']
-  const stdPerYearDataValues = Object.values(stdPerYearCounts); // [5, 5]
-
-  //colors
-  const colors = ["#606f49", "#97a97c", "#c2d5aa"];
-
-  const options = {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        position: "right",
-        maxWidth: 250,
-        labels: {
-          boxWidth: 12,
-        },
-      },
-      datalabels: {
-        color: "#f5f5f5",
-        font: {
-          weight: "normal",
-          size: 12,
-        },
-        formatter: (value, context) => {
-          const label = context.chart.data.labels[context.dataIndex];
-          return `${value}`;
-        },
-        anchor: "center",
-        align: "center",
-      },
-    },
-  };
-  const optionsBar = {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        position: "top",
-        maxHeight: 250,
-        labels: {
-          boxWidth: 12,
-        },
-      },
-      datalabels: {
-        color: "#f5f5f5",
-      },
-    },
-  };
-
   return (
     <div className="flex h-screen w-full flex-col gap-x-5 overflow-hidden bg-egg font-[Poppins] lg:flex-row">
       <Panel />
@@ -192,32 +74,39 @@ function Dashboard() {
         </div>
         <div className="flex h-full w-full flex-col items-center">
           {/* summary */}
-          <div className="flex h-auto w-full flex-wrap justify-center-safe gap-5">
-            <DCard
-              label={"Accepted Students"}
-              Icon={<GraduationCap className="min-h-8 min-w-8" />}
-              value={20}
-            />
-            <DCard
-              label={"Pending Applications"}
-              Icon={<FileUser className="h-8 w-8" />}
-              value={40}
-            />
-            <DCard
-              label={"Male Students"}
-              Icon={<Mars className="h-8 w-8" />}
-              value={10}
-            />
-            <DCard
-              label={"Female Students"}
-              Icon={<Venus className="h-8 w-8" />}
-              value={8}
-            />
-            <DCard
-              label={"Disabled Students"}
-              Icon={<Accessibility className="h-8 w-8" />}
-              value={2}
-            />
+          <div className="flex h-auto w-full justify-center">
+            <div className="grid h-auto w-[95%] grid-cols-2 grid-rows-3 content-center gap-3">
+              <DCard
+                className="col-span-1 row-span-1"
+                label={"Accepted Students"}
+                Icon={<GraduationCap className="min-h-8 min-w-8" />}
+                value={20}
+              />
+              <DCard
+                className="col-span-1 row-span-1"
+                label={"Pending Applications"}
+                Icon={<FileUser className="h-8 w-8" />}
+                value={40}
+              />
+              <DCard
+                className="col-span-1 row-span-1"
+                label={"Male Students"}
+                Icon={<Mars className="h-8 w-8" />}
+                value={10}
+              />
+              <DCard
+                className="col-span-1 row-span-1"
+                label={"Female Students"}
+                Icon={<Venus className="h-8 w-8" />}
+                value={8}
+              />
+              <DCard
+                className="col-span-1 row-span-1"
+                label={"Disabled Students"}
+                Icon={<Accessibility className="h-8 w-8" />}
+                value={2}
+              />
+            </div>
           </div>
         </div>
         {/* recents applicants */}
