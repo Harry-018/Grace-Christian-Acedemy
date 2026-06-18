@@ -25,7 +25,7 @@ function SidePanel() {
   return (
     <div>
       {/** For mobile to tablet */}
-      <div className="flex h-[8vh] min-h-[8vh] w-full flex-col gap-y-5 bg-neutral-100 p-5 font-[Poppins] text-neutral-700 lg:hidden">
+      <div className="flex h-[8vh] min-h-[8vh] w-full flex-col gap-y-5 bg-neutral-100 p-5 font-[Poppins] text-neutral-700 inset-shadow-small lg:hidden">
         <div className="flex items-center gap-x-5">
           <MenuIcon
             onClick={() => {

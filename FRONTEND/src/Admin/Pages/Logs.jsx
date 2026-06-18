@@ -38,21 +38,27 @@ function Logs() {
   ];
 
   return (
-    <div className="p- flex h-screen w-full bg-egg font-[Poppins]">
+    <div className="flex h-screen w-full flex-col gap-x-5 overflow-hidden bg-egg font-[Poppins] lg:flex-row">
       <Panel />
-      <div className="h-full w-screen space-y-5 p-5">
-        <div className="flex min-h-15 w-full items-center justify-between rounded-lg bg-neutral-100 pr-2 pl-5 inset-shadow-small">
-          <span className="flex min-h-15 items-center text-sm">Logs</span>
-          <span className="flex w-50 items-center gap-x-2">
-            <SearchBar
-              InputType={"search"}
-              InputId={"searchbar"}
-              InputPlaceholder={"Search Email"}
-            />
-          </span>
-        </div>
-        <div className="h-[85vh] w-full">
-          <LogsTable columns={columns} data={data} />
+      <div className="flex h-full w-full pb-5">
+        {/* for mobile to tablet */}
+        <div className="flex h-full w-full flex-col gap-y-5 px-[5%] lg:hidden">
+          <div className="flex min-h-15 w-full items-center justify-between">
+            <span className="text-sm">Logs</span>
+            <span className="flex w-50 items-center gap-x-2">
+              <SearchBar
+                InputType={"search"}
+                InputId={"searchbar"}
+                InputPlaceholder={"Search Email "}
+              />
+            </span>
+          </div>
+
+          <div className="flex h-full w-full flex-col">
+            <span className="h-[80%] w-full">
+              <LogsTable columns={columns} data={data} />
+            </span>
+          </div>
         </div>
       </div>
     </div>
