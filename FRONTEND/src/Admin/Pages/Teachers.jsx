@@ -184,7 +184,7 @@ function Teachers() {
       <Panel />
       <div className="flex h-full w-full pb-5">
         {/* for mobile to tablet */}
-        <div className="flex h-full w-full flex-col gap-y-5 px-5 lg:hidden">
+        <div className="flex h-full w-full flex-col gap-y-5 px-[5%] lg:hidden">
           <div className="flex min-h-15 w-full items-center justify-between">
             <span className="text-sm">Teachers</span>
             <span className="flex w-60 items-center gap-x-2">

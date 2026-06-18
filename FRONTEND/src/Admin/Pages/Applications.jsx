@@ -98,7 +98,7 @@ function Applications() {
       <Panel />
       <div className="flex h-full w-full pb-5">
         {/* for mobile to tablet */}
-        <div className="flex h-full w-screen max-w-full flex-col gap-y-5 px-5 lg:hidden">
+        <div className="flex h-full w-screen max-w-full flex-col gap-y-5 px-[5%] lg:hidden">
           <span className="flex min-h-15 w-full items-center justify-between text-sm">
             Applicants
             <span className="flex w-50 items-center gap-x-2">

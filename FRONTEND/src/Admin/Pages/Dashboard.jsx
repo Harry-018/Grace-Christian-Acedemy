@@ -68,14 +68,14 @@ function Dashboard() {
     <div className="flex h-screen w-full flex-col gap-x-5 overflow-hidden bg-egg font-[Poppins] lg:flex-row">
       <Panel />
       {/* for mobile to tablet */}
-      <div className="no-scrollbar flex h-screen w-full flex-col items-center gap-y-5 overflow-y-auto py-5 lg:hidden">
-        <div className="flex h-[5vh] w-screen items-center px-5">
-          <span className="w-full text-sm">Summary</span>
-        </div>
+      <div className="no-scrollbar flex h-screen w-full flex-col items-center gap-y-5 overflow-y-auto lg:hidden">
         <div className="flex h-full w-full flex-col items-center">
+          <div className="flex min-h-15 w-screen items-center px-5">
+            <span className="w-full text-sm">Summary</span>
+          </div>
           {/* summary */}
-          <div className="flex h-auto w-full justify-center">
-            <div className="grid h-auto w-[95%] grid-cols-2 grid-rows-3 content-center gap-3">
+          <div className="flex h-auto w-full px-[5%]">
+            <div className="grid h-auto w-full grid-cols-2 grid-rows-3 content-center gap-3">
               <DCard
                 className="col-span-1 row-span-1"
                 label={"Accepted Students"}
@@ -113,7 +113,7 @@ function Dashboard() {
         <div className="flex h-[5vh] w-screen items-center px-5">
           <span className="w-full text-sm">Recent Applications</span>
         </div>
-        <div className="flex h-full min-h-[60%] w-full flex-col gap-y-5 px-[2%]">
+        <div className="flex h-full min-h-[60%] w-full flex-col gap-y-5 px-[5%]">
           <div className="h-[90%]">
             <RecentAppTable columns={RecentAppColumns} data={applicants} />
           </div>

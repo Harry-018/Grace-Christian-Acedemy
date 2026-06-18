@@ -60,7 +60,7 @@ function Submissions() {
       <Panel />
 
       {/* for mobile to  tablet */}
-      <div className="no-scrollbar flex h-full w-screen overflow-y-auto px-5 lg:hidden">
+      <div className="no-scrollbar flex h-full w-screen overflow-y-auto px-[5%] lg:hidden">
         <div className="flex h-full w-full flex-col gap-y-5">
           <span className="flex min-h-15 w-full items-center justify-between text-sm">
             Submissions
