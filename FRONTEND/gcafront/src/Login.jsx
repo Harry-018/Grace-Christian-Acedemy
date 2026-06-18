@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import Logo from "../assets/logo.png";
+import Logo from "./assets/logo.png";
 import { User, Lock } from "lucide-react";
-import LoginButton from "../Components/Buttons/LoginButton.jsx";
-import InputFull from "../Components/Inputs/InputFull.jsx";
+import LoginButton from "./Admin/Components/Buttons/LoginButton.jsx";
+import InputFull from "./Admin/Components/Inputs/InputFull.jsx";
 
 function Login() {
   return (

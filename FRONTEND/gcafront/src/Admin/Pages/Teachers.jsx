@@ -10,7 +10,7 @@ import {
   addTeacher,
   modifyTeacher,
   removeTeacher,
-} from "../services/teacherService.jsx";
+} from "../../services/teacherService.jsx";
 
 import { createColumnHelper } from "@tanstack/react-table";
 import React from "react";
@@ -44,6 +44,7 @@ function Teachers() {
   const handleEditClick = (rowData) => {
     setTeacher({
       teacher_id: rowData.teacher_id || "",
+      t_email: rowData.t_email || "",
       t_firstname: rowData.t_firstname || "",
       t_lastname: rowData.t_lastname || "",
       t_middlename: rowData.t_middlename || "",
@@ -63,6 +64,9 @@ function Teachers() {
   const Teachercolumns = [
     columnHelper.accessor("teacher_id", {
       header: "Teacher Id ",
+    }),
+    columnHelper.accessor("t_email", {
+      header: "Email ",
     }),
     columnHelper.accessor("t_firstname", {
       header: "First Name ",
@@ -86,7 +90,6 @@ function Teachers() {
 
         return (
           <div className="flex items-center justify-start gap-3">
-            {/* FIXED: Pass rowData into the click handler */}
             <button
               onClick={() => handleEditClick(rowData)}
               className="flex h-8 w-8 items-center justify-center gap-x-1 rounded-sm text-sm text-swamp-green duration-150 hover:cursor-pointer focus:bg-swamp-green focus:text-white active:scale-90"
@@ -177,33 +180,59 @@ function Teachers() {
   });
 
   return (
-    <div className="flex h-screen w-full bg-egg font-[Poppins]">
+    <div className="flex h-screen w-full flex-col gap-x-5 overflow-hidden bg-egg font-[Poppins] lg:flex-row">
       <Panel />
-      <div className="mx-5 flex h-full w-full flex-col gap-y-5 p-5">
-        <div className="flex h-15 w-375 items-center justify-between rounded-lg bg-neutral-100 pr-2 pl-5 inset-shadow-small">
-          <span className="text-sm">Teachers</span>
-          <span className="flex w-75 gap-x-2">
-            <SearchBar
-              InputType={"search"}
-              InputId={"searchbar"}
-              InputPlaceholder={"Search ID, Name, Role "}
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-
-            <span className="h-10 w-20">
-              <CreateButton onClick={() => setAddModal(true)} label={"Add"} />
+      <div className="flex h-full w-full pb-5">
+        {/* for mobile to tablet */}
+        <div className="flex h-full w-full flex-col gap-y-5 px-5 lg:hidden">
+          <div className="flex min-h-15 w-full items-center justify-between">
+            <span className="text-sm">Teachers</span>
+            <span className="flex w-60 items-center gap-x-2">
+              <SearchBar
+                InputType={"search"}
+                InputId={"searchbar"}
+                InputPlaceholder={"Search ID, Name, Role "}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
             </span>
-          </span>
+          </div>
+
+          <div className="flex h-full w-full flex-col">
+            <span className="h-[95%] w-full">
+              <TeacherTable columns={Teachercolumns} data={filteredTeachers} />
+            </span>
+          </div>
         </div>
-        <div className="h-195 w-375 rounded-xl bg-neutral-100">
-          <TeacherTable columns={Teachercolumns} data={filteredTeachers} />
+
+        {/* for laptop and beyond */}
+        <div className="hidden h-full max-w-full min-w-[82vw] flex-col gap-y-5 p-5 lg:flex">
+          <div className="flex min-h-[8vh] w-full items-center justify-between rounded-lg bg-neutral-100 px-5 inset-shadow-small">
+            <span className="text-sm">Teachers</span>
+            <span className="flex w-75 gap-x-2">
+              <SearchBar
+                InputType={"search"}
+                InputId={"searchbar"}
+                InputPlaceholder={"Search ID, Name, Role "}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+
+              <span className="h-10 w-20">
+                <CreateButton onClick={() => setAddModal(true)} label={"Add"} />
+              </span>
+            </span>
+          </div>
+          <div className="h-full w-full rounded-xl bg-neutral-100">
+            <TeacherTable columns={Teachercolumns} data={filteredTeachers} />
+          </div>
         </div>
       </div>
+
       {/* ADD MODAL */}
       {addModal && (
         <div className="fixed z-50 flex h-full w-full items-center justify-center bg-neutral-800/60">
-          <div className="flex max-h-150 min-h-120 w-80 flex-col items-center justify-between rounded-lg bg-neutral-100 p-5 inset-shadow-small">
+          <div className="flex max-h-150 min-h-auto w-80 flex-col items-center justify-between gap-y-5 rounded-lg bg-neutral-100 p-5 inset-shadow-small">
             <span className="flex items-center text-sm">Add Teacher Info</span>
             <span className="flex w-full flex-col gap-y-2">
               <input
@@ -216,42 +245,10 @@ function Teachers() {
               />
               <input
                 type="text"
-                name="t_firstname"
-                value={teacher.t_firstname}
+                name="t_email"
+                value={teacher.t_email}
                 onChange={handleChange}
-                placeholder="First Name"
-                className="h-10 w-full rounded-lg border border-swamp-green bg-neutral-50 p-2 text-xs outline-offset-0 focus:outline-1 focus:outline-lime-green"
-              />
-              <input
-                type="text"
-                name="t_lastname"
-                value={teacher.t_lastname}
-                onChange={handleChange}
-                placeholder="Last Name"
-                className="h-10 w-full rounded-lg border border-swamp-green bg-neutral-50 p-2 text-xs outline-offset-0 focus:outline-1 focus:outline-lime-green"
-              />
-              <input
-                type="text"
-                name="t_middlename"
-                value={teacher.t_middlename}
-                onChange={handleChange}
-                placeholder="Middle Name"
-                className="h-10 w-full rounded-lg border border-swamp-green bg-neutral-50 p-2 text-xs outline-offset-0 focus:outline-1 focus:outline-lime-green"
-              />
-              <input
-                type="text"
-                name="t_gender"
-                value={teacher.t_gender}
-                onChange={handleChange}
-                placeholder="Gender"
-                className="h-10 w-full rounded-lg border border-swamp-green bg-neutral-50 p-2 text-xs outline-offset-0 focus:outline-1 focus:outline-lime-green"
-              />
-              <input
-                type="text"
-                name="t_role"
-                value={teacher.t_role}
-                onChange={handleChange}
-                placeholder="Role"
+                placeholder="Email"
                 className="h-10 w-full rounded-lg border border-swamp-green bg-neutral-50 p-2 text-xs outline-offset-0 focus:outline-1 focus:outline-lime-green"
               />
             </span>
@@ -277,7 +274,7 @@ function Teachers() {
       {/* MODIFY MODAL */}
       {modifyModal && (
         <div className="fixed z-50 flex h-full w-full items-center justify-center bg-neutral-800/60">
-          <div className="flex max-h-150 min-h-120 w-80 flex-col items-center justify-between rounded-lg bg-neutral-100 p-5 inset-shadow-small">
+          <div className="flex max-h-150 min-h-auto w-80 flex-col items-center justify-between gap-y-5 rounded-lg bg-neutral-100 p-5 inset-shadow-small">
             <span className="flex items-center text-sm">
               Modify Teacher Info
             </span>
@@ -290,6 +287,14 @@ function Teachers() {
                 onChange={handleChange}
                 placeholder="Teacher ID"
                 className="h-10 w-full cursor-not-allowed rounded-lg border border-neutral-300 bg-neutral-200 p-2 text-xs text-neutral-500 outline-none"
+              />
+              <input
+                type="text"
+                name="t_email"
+                value={teacher.t_email}
+                onChange={handleChange}
+                placeholder="Email"
+                className="h-10 w-full rounded-lg border border-swamp-green bg-neutral-50 p-2 text-xs outline-offset-0 focus:outline-1 focus:outline-lime-green"
               />
               <input
                 type="text"

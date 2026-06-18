@@ -1,18 +1,19 @@
 import { Routes, Route } from "react-router-dom";
-import Dashboard from "./Pages/Dashboard.jsx";
-import Login from "./Pages/Login.jsx";
-import Applications from "./Pages/Applications.jsx";
-import Students from "./Pages/Students.jsx";
-import Classes from "./Pages/Classes.jsx";
-import WebManagement from "./Pages/WebManagement.jsx";
-import Teachers from "./Pages/Teachers.jsx";
-import Logs from "./Pages/Logs.jsx";
-import Submissions from "./Pages/Submissions.jsx";
+import Dashboard from "./Admin/Pages/Dashboard.jsx";
+import Login from "./Login.jsx";
+import Applications from "./Admin/Pages/Applications.jsx";
+import Students from "./Admin/Pages/Students.jsx";
+import Classes from "./Admin/Pages/Classes.jsx";
+import WebManagement from "./Admin/Pages/WebManagement.jsx";
+import Teachers from "./Admin/Pages/Teachers.jsx";
+import Logs from "./Admin/Pages/Logs.jsx";
+import Submissions from "./Admin/Pages/Submissions.jsx";
 
 function App() {
   return (
     <>
       <div className="flex">
+        {/* admin routes */}
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="Dashboard" element={<Dashboard />} />

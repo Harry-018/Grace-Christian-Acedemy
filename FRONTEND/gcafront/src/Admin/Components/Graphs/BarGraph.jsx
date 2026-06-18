@@ -6,8 +6,8 @@ function BarGraph({ title, chartLabel, options, dataValue, colors }) {
   const dataValues = dataValue; // [5, 5]
 
   return (
-    <div className="flex h-full w-full flex-col justify-between rounded-2xl bg-neutral-100 p-5 font-[Poppins] inset-shadow-med">
-      <span className="text-sm">{title}</span>
+    <div className="flex h-[30vh] w-full flex-col justify-between rounded-2xl bg-neutral-100 p-5 font-[Poppins] inset-shadow-med md:w-[45vw] lg:h-full lg:w-full">
+      <span className="text-xs 4k:text-lg">{title}</span>
       <div className="mx-auto h-[90%] w-full">
         <Bar
           className="hover:cursor-pointer"
@@ -18,7 +18,7 @@ function BarGraph({ title, chartLabel, options, dataValue, colors }) {
               {
                 label: "Number of Students",
                 data: dataValues,
-                borderRadius: 10,
+                borderRadius: 0,
                 borderColor: "transparent",
                 backgroundColor: colors.slice(0, labels.length),
                 offset: 5,

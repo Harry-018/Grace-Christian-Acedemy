@@ -19,7 +19,7 @@ function Submissions() {
       header: "Applications Number ",
     }),
 
-    columnHelper.accessor("subnumber", {
+    columnHelper.accessor("subdate", {
       header: "Submission Date ",
     }),
     columnHelper.accessor(
@@ -56,20 +56,61 @@ function Submissions() {
   ];
 
   return (
-    <div className="flex h-screen w-full bg-egg font-[Poppins]">
+    <div className="flex h-screen w-full flex-col gap-x-5 overflow-hidden bg-egg font-[Poppins] lg:flex-row">
       <Panel />
-      <div className="ml-5 p-5">
+
+      {/* for mobile to  tablet */}
+      <div className="no-scrollbar flex h-full w-screen overflow-y-auto px-5 lg:hidden">
         <div className="flex h-full w-full flex-col gap-y-5">
-          <span className="flex min-h-15 w-[80vw] items-center rounded-lg bg-neutral-100 pl-5 text-sm inset-shadow-small">
+          <span className="flex min-h-15 w-full items-center justify-between text-sm">
+            Submissions
+          </span>
+          {/* student requirements */}
+          <div className="flex h-auto max-h-[40vh] flex-col gap-y-5 rounded-lg bg-neutral-100 p-5 text-sm inset-shadow-med">
+            Student Document Requirements
+            <div className="flex flex-col gap-y-3 text-xs text-neutral-700">
+              <span className="border-b border-neutral-600/40 py-3">
+                Birth Certificate
+              </span>
+              <span className="border-b border-neutral-600/40 py-3">
+                Completed Form
+              </span>
+              <span className="border-b border-neutral-600/40 py-3">
+                Tuition Fee
+              </span>
+            </div>
+          </div>
+          <div className="flex h-screen w-full flex-col gap-y-5 lg:hidden">
+            <div className="flex w-full flex-col gap-y-5">
+              <div className="custom-tailwind-calendar z-20 flex flex-col">
+                <Calendar />
+              </div>
+            </div>
+
+            <div className="flex h-full w-full flex-col">
+              <span className="h-[95%] w-full">
+                <CheckList columns={CheckListcolumns} data={data} />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* for laptop and above */}
+      <div className="hidden h-screen w-full p-5 lg:block">
+        <div className="flex h-full w-full flex-col gap-y-5">
+          <span className="flex min-h-[8vh] w-full items-center rounded-lg bg-neutral-100 pl-5 text-sm inset-shadow-small">
             Submissions
           </span>
 
-          <div className="flex h-full w-full gap-x-5">
-            <div className="flex w-[25vw] flex-col justify-between gap-y-5">
-              <div className="custom-tailwind-calendar flex flex-col gap-y-5">
+          <div className="hidden h-full w-full gap-x-5 pb-5 lg:flex">
+            <div className="flex w-[25vw] flex-col gap-y-5">
+              <div className="custom-tailwind-calendar flex min-w-[25%] flex-col">
                 <Calendar />
               </div>
-              <div className="flex h-full flex-col gap-y-5 rounded-lg bg-neutral-100 p-5 text-sm inset-shadow-med">
+
+              {/* student requirements */}
+              <div className="flex h-auto max-h-[40vh] flex-col gap-y-5 rounded-lg bg-neutral-100 p-5 text-sm inset-shadow-med">
                 Student Document Requirements
                 <div className="flex flex-col gap-y-3 text-xs text-neutral-700">
                   <span className="border-b border-neutral-600/40 py-3">
@@ -85,7 +126,7 @@ function Submissions() {
               </div>
             </div>
 
-            <div className="h-[87vh] min-h-full w-full">
+            <div className="h-[90%] w-full rounded-xl bg-neutral-100">
               <CheckList columns={CheckListcolumns} data={data} />
             </div>
           </div>

@@ -10,7 +10,7 @@ import {
   addStudent,
   modifyStudent,
   removeStudent,
-} from "../services/studentService.jsx";
+} from "../../services/studentService.jsx";
 
 import { createColumnHelper } from "@tanstack/react-table";
 import React from "react";
@@ -33,7 +33,7 @@ function Students() {
   const [students, setStudents] = useState([]);
 
   // conditional rendering for modals
-  const [addModal, setAddModal] = useState(false);
+
   const [modifyModal, setModifyModal] = useState(false);
 
   //filter state for search
@@ -59,16 +59,12 @@ function Students() {
 
   //close modals and reset inputs
   const handleCloseModal = () => {
-    setAddModal(false);
     setModifyModal(false);
     setStudent(initialStudentState);
   };
 
   // table rows and header
   const Studentcolumns = [
-    columnHelper.accessor("no", {
-      header: "No. ",
-    }),
     columnHelper.accessor("student_id", {
       header: "Student ID ",
     }),
@@ -181,121 +177,51 @@ function Students() {
   });
 
   return (
-    <div className="flex h-screen w-full bg-egg font-[Poppins]">
+    <div className="flex h-screen w-full flex-col gap-x-5 overflow-hidden bg-egg font-[Poppins] lg:flex-row">
       <Panel />
-      <div className="mx-5 flex h-full w-full flex-col gap-y-5 p-5">
-        <div className="flex h-15 w-375 items-center justify-between rounded-lg bg-neutral-100 pr-2 pl-5 inset-shadow-small">
-          <span className="text-sm">Students</span>
-          <span className="flex w-75 gap-x-2">
-            <SearchBar
-              InputType={"search"}
-              InputId={"searchbar"}
-              InputPlaceholder={"Search Student ID"}
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-            <span className="h-10 w-20">
-              <AddButton onClick={() => setAddModal(true)} label={"Add"} />
-            </span>
-          </span>
-        </div>
-
-        <div className="h-195 w-375 rounded-xl bg-neutral-100">
-          <EnrolledTable columns={Studentcolumns} data={filteredStudents} />
-        </div>
-      </div>
-
-      {/* ADD MODAL */}
-      {addModal && (
-        <div className="fixed z-50 flex h-full w-full items-center justify-center bg-neutral-800/60">
-          <div className="flex max-h-150 min-h-130 w-80 flex-col items-center justify-between rounded-lg bg-neutral-100 p-5 inset-shadow-small">
-            <span className="flex items-center text-sm">Add Student Info</span>
-            <span className="flex w-full flex-col gap-y-2">
-              <input
-                type="text"
-                name="student_id"
-                value={student.student_id}
-                onChange={handleChange}
-                placeholder="Student ID"
-                className="h-10 w-full rounded-lg border border-swamp-green bg-neutral-50 p-2 text-xs outline-offset-0 focus:outline-1 focus:outline-lime-green"
-              />
-              <input
-                type="text"
-                name="s_firstname"
-                value={student.s_firstname}
-                onChange={handleChange}
-                placeholder="First Name"
-                className="h-10 w-full rounded-lg border border-swamp-green bg-neutral-50 p-2 text-xs outline-offset-0 focus:outline-1 focus:outline-lime-green"
-              />
-              <input
-                type="text"
-                name="s_lastname"
-                value={student.s_lastname}
-                onChange={handleChange}
-                placeholder="Last Name"
-                className="h-10 w-full rounded-lg border border-swamp-green bg-neutral-50 p-2 text-xs outline-offset-0 focus:outline-1 focus:outline-lime-green"
-              />
-              <input
-                type="text"
-                name="s_middlename"
-                value={student.s_middlename}
-                onChange={handleChange}
-                placeholder="Middle Name"
-                className="h-10 w-full rounded-lg border border-swamp-green bg-neutral-50 p-2 text-xs outline-offset-0 focus:outline-1 focus:outline-lime-green"
-              />
-              <span className="flex gap-x-2">
-                <input
-                  type="text"
-                  name="s_gender"
-                  value={student.s_gender}
-                  onChange={handleChange}
-                  placeholder="Gender"
-                  className="h-10 w-full rounded-lg border border-swamp-green bg-neutral-50 p-2 text-xs outline-offset-0 focus:outline-1 focus:outline-lime-green"
-                />
-                <input
-                  type="text"
-                  name="s_age"
-                  value={student.s_age}
-                  onChange={handleChange}
-                  placeholder="Age"
-                  className="h-10 w-full rounded-lg border border-swamp-green bg-neutral-50 p-2 text-xs outline-offset-0 focus:outline-1 focus:outline-lime-green"
-                />
-              </span>
-              <input
-                type="text"
-                name="s_guardian"
-                value={student.s_guardian}
-                onChange={handleChange}
-                placeholder="Guardian Name"
-                className="h-10 w-full rounded-lg border border-swamp-green bg-neutral-50 p-2 text-xs outline-offset-0 focus:outline-1 focus:outline-lime-green"
-              />
-              <input
-                type="text"
-                name="s_guardianemail"
-                value={student.s_guardianemail}
-                onChange={handleChange}
-                placeholder="Guardian Email"
-                className="h-10 w-full rounded-lg border border-swamp-green bg-neutral-50 p-2 text-xs outline-offset-0 focus:outline-1 focus:outline-lime-green"
+      <div className="flex h-full w-full pb-5">
+        {/* for mobile to tablet */}
+        <div className="flex h-full w-full flex-col gap-y-5 px-5 lg:hidden">
+          <div className="flex min-h-15 w-full items-center justify-between">
+            <span className="text-sm">Students</span>
+            <span className="flex w-50 items-center gap-x-2">
+              <SearchBar
+                InputType={"search"}
+                InputId={"searchbar"}
+                InputPlaceholder={"Search Student ID"}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
               />
             </span>
+          </div>
 
-            <span className="flex w-full flex-col gap-y-2">
-              <button
-                onClick={handleAdd}
-                className="h-10 w-full cursor-pointer rounded-lg bg-swamp-green text-xs text-neutral-50"
-              >
-                Add Student
-              </button>
-              <button
-                onClick={handleCloseModal}
-                className="h-10 w-full cursor-pointer rounded-lg border border-neutral-400 text-xs text-neutral-800"
-              >
-                Close
-              </button>
+          <div className="flex h-full w-full flex-col">
+            <span className="h-[95%] w-full">
+              <EnrolledTable columns={Studentcolumns} data={filteredStudents} />
             </span>
           </div>
         </div>
-      )}
+
+        {/* for laptop and above */}
+        <div className="hidden h-full max-w-full min-w-[82vw] flex-col gap-y-5 p-5 lg:flex">
+          <div className="flex min-h-[8vh] w-full items-center justify-between rounded-lg bg-neutral-100 px-5 inset-shadow-small">
+            <span className="text-sm">Students</span>
+            <span className="flex w-50 gap-x-2">
+              <SearchBar
+                InputType={"search"}
+                InputId={"searchbar"}
+                InputPlaceholder={"Search Student ID"}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </span>
+          </div>
+
+          <div className="h-full w-full rounded-xl bg-neutral-100">
+            <EnrolledTable columns={Studentcolumns} data={filteredStudents} />
+          </div>
+        </div>
+      </div>
 
       {/* MODIFY MODAL */}
       {modifyModal && (

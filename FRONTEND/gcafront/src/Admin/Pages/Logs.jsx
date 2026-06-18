@@ -28,7 +28,6 @@ function Logs() {
           year: "numeric",
           month: "short",
           day: "numeric",
-          timeStyle: "long",
         });
       },
     }),

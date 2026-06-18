@@ -1,12 +1,10 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
 
-
 :root {
   touch-action: pan-x pan-y;
   height: 100%;
 }
-
 
 body {
   margin: 0;
@@ -37,7 +35,7 @@ body {
 
 .custom-tailwind-calendar {
   & .react-calendar {
-    @apply max-h-full min-h-75 w-full rounded-xl border-none bg-neutral-100 p-5 font-[Poppins] inset-shadow-med;
+    @apply mt-5 block max-h-full min-h-75 w-full rounded-xl border-none bg-neutral-100 p-5 font-[Poppins] inset-shadow-med;
   }
 
   & .react-calendar__navigation {
@@ -86,15 +84,46 @@ body {
   }
 }
 
+.custom-datepicker {
+  width: 100%;
+  height: 5vh;
+}
+
+.custom-datepicker .react-date-picker__wrapper {
+  border: 2px;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background-color: #f5f5f5;
+  box-shadow:
+    inset 0 1px 2px #ffffff30,
+    0 1px 2px #00000030,
+    0 2px 4px #00000015;
+}
+
+.custom-datepicker .react-date-picker__inputGroup {
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+}
+
+.custom-datepicker .react-date-picker__calendar-button svg {
+  stroke: #97a97c;
+  text-decoration-color: #97a97c;
+}
+
+.custom-datepicker .react-date-picker__clear-button svg {
+  display: none;
+}
+
 @theme {
   --color-forest-green: #133215;
   --color-lime-green: #92b775;
   --color-swamp-green: #97a97c;
   --color-beige: #f3e8d3;
-  --color-egg: hsl(39, 29%, 85%);
+  --color-egg: hsl(39, 10%, 92%);
   --color-egg-dark: hsl(39, 5%, 5%);
   --color-lime-dark: hsl(94, 31%, 45%);
   --color-reject: #e77f78;
+  --breakpoint-4k: 2560px;
 
   --inset-shadow-small:
     inset 0 1px 2px #ffffff30, 0 1px 2px #00000030, 0 2px 4px #00000015;
