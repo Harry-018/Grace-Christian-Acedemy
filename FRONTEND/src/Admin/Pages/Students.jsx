@@ -179,7 +179,7 @@ function Students() {
   return (
     <div className="flex h-screen w-full flex-col gap-x-5 overflow-hidden bg-egg font-[Poppins] lg:flex-row">
       <Panel />
-      <div className="flex h-full w-full pb-5">
+      <div className="flex min-h-full w-full pb-5">
         {/* for mobile to tablet */}
         <div className="flex h-full w-full flex-col gap-y-5 px-5 lg:hidden">
           <div className="flex min-h-15 w-full items-center justify-between">
