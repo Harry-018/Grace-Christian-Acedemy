@@ -1,10 +1,6 @@
 import Panel from "../Components/SidePanel.jsx";
 import DCard from "../Components/DashboardCard.jsx";
-import GenderChart from "../Components/Graphs/PieChart.jsx";
-import TuitionChart from "../Components/Graphs/PieChart.jsx";
-import ApplicantChart from "../Components/Graphs/PieChart.jsx";
-import ClassChart from "../Components/Graphs/BarGraph.jsx";
-import LineChart from "../Components/Graphs/LineChart.jsx";
+
 import RecentAppTable from "../Components/Table.jsx";
 
 import {
