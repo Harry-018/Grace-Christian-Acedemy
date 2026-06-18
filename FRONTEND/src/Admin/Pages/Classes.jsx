@@ -24,8 +24,10 @@ function Classes() {
               </span>
             </span>
           </div>
-          <div className="w-375 overflow-hidden">
-            <div className="flex h-20 items-center gap-x-3 overflow-x-auto overflow-y-hidden px-2"></div>
+          <div className="w-full overflow-hidden">
+            <div className="flex h-20 items-center gap-x-3 overflow-x-auto overflow-y-hidden px-2 text-neutral-500">
+              under construction....
+            </div>
           </div>
         </div>
 
