@@ -1,4 +1,4 @@
-import Logo from "../../assets/logowbg.png";
+import Logo from "../../public/assets/logowbg.png";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 

@@ -13,7 +13,7 @@ import {
   Accessibility,
 } from "lucide-react";
 
-import { getRecentApplicants } from "../../services/applicationService.jsx";
+import { getRecentApplicants } from "../services/applicationService.jsx";
 
 import { React, useEffect, useState } from "react";
 import { createColumnHelper } from "@tanstack/react-table";
@@ -111,8 +111,8 @@ function Dashboard() {
         <div className="flex h-[5vh] w-screen items-center px-5">
           <span className="w-full text-sm">Recent Applications</span>
         </div>
-        <div className="flex h-full min-h-[60%] w-full flex-col gap-y-5 px-[5%]">
-          <div className="h-[90%]">
+        <div className="flex h-full min-h-[60%] w-full flex-col px-[5%]">
+          <div className="h-[95%]">
             <RecentAppTable columns={RecentAppColumns} data={applicants} />
           </div>
         </div>
@@ -163,8 +163,6 @@ function Dashboard() {
               </div>
             </div>
           </div>
-
-          <div></div>
         </div>
       </div>
     </div>

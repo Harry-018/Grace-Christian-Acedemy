@@ -35,7 +35,7 @@ body {
 
 .custom-tailwind-calendar {
   & .react-calendar {
-    @apply mt-5 block max-h-full min-h-75 w-full rounded-xl border-none bg-neutral-100 p-5 font-[Poppins] inset-shadow-med;
+    @apply mt-5 block max-h-full min-h-75 w-72 rounded-xl border-none bg-neutral-100 p-5 font-[Poppins] inset-shadow-med;
   }
 
   & .react-calendar__navigation {

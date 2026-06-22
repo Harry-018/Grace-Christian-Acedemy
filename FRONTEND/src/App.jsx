@@ -1,13 +1,13 @@
 import { Routes, Route } from "react-router-dom";
-import Dashboard from "./Admin/Pages/Dashboard.jsx";
+import Dashboard from "./Admin/Dashboard.jsx";
 import Login from "./Login.jsx";
-import Applications from "./Admin/Pages/Applications.jsx";
-import Students from "./Admin/Pages/Students.jsx";
-import Classes from "./Admin/Pages/Classes.jsx";
-import WebManagement from "./Admin/Pages/WebManagement.jsx";
-import Teachers from "./Admin/Pages/Teachers.jsx";
-import Logs from "./Admin/Pages/Logs.jsx";
-import Submissions from "./Admin/Pages/Submissions.jsx";
+import Applications from "./Admin/Applications.jsx";
+import Students from "./Admin/Students.jsx";
+import Classes from "./Admin/Classes.jsx";
+import WebManagement from "./Admin/WebManagement.jsx";
+import Teachers from "./Admin/Teachers.jsx";
+import Logs from "./Admin/Logs.jsx";
+import Submissions from "./Admin/Submissions.jsx";
 
 function App() {
   return (

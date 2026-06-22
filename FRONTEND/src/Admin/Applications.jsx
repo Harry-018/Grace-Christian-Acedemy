@@ -12,7 +12,7 @@ import { Check, X, MoreHorizontal } from "lucide-react";
 import { createColumnHelper } from "@tanstack/react-table";
 import { React, useEffect, useState } from "react";
 
-import { getAllApplicants } from "../../services/applicationService.jsx";
+import { getAllApplicants } from "../services/applicationService.jsx";
 
 const columnHelper = createColumnHelper();
 

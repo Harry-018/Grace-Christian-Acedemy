@@ -10,7 +10,7 @@ import {
   addTeacher,
   modifyTeacher,
   removeTeacher,
-} from "../../services/teacherService.jsx";
+} from "../services/teacherService.jsx";
 
 import { createColumnHelper } from "@tanstack/react-table";
 import React from "react";
