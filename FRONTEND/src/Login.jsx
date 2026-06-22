@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Logo from "../public/assets/logo.png";
 import { User, Lock } from "lucide-react";
 import LoginButton from "./Components/Buttons/LoginButton.jsx";
 import InputFull from "./Components/Inputs/InputFull.jsx";
@@ -9,7 +8,7 @@ function Login() {
     <div className="flex h-screen w-screen items-center justify-center bg-neutral-200 font-[Poppins]">
       <div className="inset-shadow-md z-10 flex h-auto w-[90%] flex-col items-center justify-center space-y-5 rounded-4xl bg-neutral-100 px-5 py-10 inset-shadow-xlar md:w-[45%] lg:h-115 lg:w-110 lg:p-0">
         <div className="flex items-center">
-          <img src={Logo} alt="GCA Logo" className="w-20" />
+          <img src="/assets/logo.png" alt="GCA Logo" className="w-20" />
           <p className="font-[PoppinsBold] text-sm leading-4 lg:text-lg">
             GRACE CHRISTIAN <br /> ACADEMY OF CAVITE INC.
           </p>
