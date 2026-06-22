@@ -4,7 +4,7 @@ import NotFound from "./NotFound.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "",
+    path: "/",
     element: <Home />,
   },
 

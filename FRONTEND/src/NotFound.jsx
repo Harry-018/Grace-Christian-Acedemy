@@ -1,6 +1,5 @@
 import { Frown } from "lucide-react";
 import { Link } from "react-router-dom";
-import Card from "./Components/DashboardCard.jsx";
 
 function NotFound() {
   return (
