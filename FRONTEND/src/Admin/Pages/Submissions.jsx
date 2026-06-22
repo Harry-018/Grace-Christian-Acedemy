@@ -1,7 +1,6 @@
 import Panel from "../Components/SidePanel.jsx";
 import Calendar from "../Components/TemplateCalendar.jsx";
 import CheckList from "../Components/Table.jsx";
-import StudentData from "../TableData/StudentData.json";
 import React from "react";
 
 import { Check, X, MoreHorizontal } from "lucide-react";
@@ -12,7 +11,7 @@ import { useState } from "react";
 const columnHelper = createColumnHelper();
 
 function Submissions() {
-  const [data] = React.useState(() => [...StudentData]);
+  const [data] = React.useState(() => []);
 
   const CheckListcolumns = [
     columnHelper.accessor("subnumber", {
@@ -126,7 +125,7 @@ function Submissions() {
               </div>
             </div>
 
-            <div className="h-[90%] w-full rounded-xl bg-neutral-100">
+            <div className="h-full w-full rounded-xl bg-neutral-100">
               <CheckList columns={CheckListcolumns} data={data} />
             </div>
           </div>

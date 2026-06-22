@@ -12,8 +12,6 @@ import {
   Venus,
   Accessibility,
 } from "lucide-react";
-import UserData from "../TableData/TeacherData.json";
-import StudentData from "../TableData/StudentData.json";
 
 import { getRecentApplicants } from "../../services/applicationService.jsx";
 

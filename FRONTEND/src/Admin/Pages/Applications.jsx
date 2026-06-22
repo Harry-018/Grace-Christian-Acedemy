@@ -1,5 +1,4 @@
 import Panel from "../Components/SidePanel.jsx";
-import StudentData from "../TableData/StudentData.json";
 import Applicants from "../Components/Table.jsx";
 import SearchBar from "../Components/Inputs/SearchBar.jsx";
 import SendBtn from "../Components/Buttons/GreenButton.jsx";
@@ -79,10 +78,6 @@ const Applicantscolumns = [
 function Applications() {
   const [applicants, setApplicants] = useState([]);
 
-  useEffect(() => {
-    loadApplicants();
-  }, []);
-
   // useEffect for refreshing data from database
   const loadApplicants = async () => {
     try {
@@ -92,6 +87,10 @@ function Applications() {
       console.error("Error loading teachers:", error);
     }
   };
+
+  useEffect(() => {
+    loadApplicants();
+  }, []);
 
   return (
     <div className="flex h-screen w-full flex-col gap-x-5 overflow-hidden bg-egg font-[Poppins] lg:flex-row">

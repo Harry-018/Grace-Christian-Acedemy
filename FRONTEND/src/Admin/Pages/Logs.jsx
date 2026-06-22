@@ -1,6 +1,5 @@
 import Panel from "../Components/SidePanel.jsx";
 import LogsTable from "../Components/Table.jsx";
-import UserData from "../TableData/TeacherData.json";
 import SearchBar from "../Components/Inputs/SearchBar.jsx";
 
 import { createColumnHelper } from "@tanstack/react-table";
@@ -8,7 +7,7 @@ import React from "react";
 
 const columnHelper = createColumnHelper();
 function Logs() {
-  const [data] = React.useState(() => [...UserData]);
+  const [data] = React.useState(() => []);
 
   const columns = [
     columnHelper.accessor("userid", {
