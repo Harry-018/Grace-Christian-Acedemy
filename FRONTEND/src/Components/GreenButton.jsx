@@ -4,7 +4,7 @@ const GreenButton = ({ Label, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className="rounded-full bg-swamp-green px-4 py-2 font-[PoppinsBold] text-bone"
+      className="cursor-pointer rounded-full bg-swamp-green px-4 py-2 font-[PoppinsBold] text-sm text-bone inset-shadow-small duration-150 active:scale-90 active:bg-lime-green"
     >
       {Label}
     </button>

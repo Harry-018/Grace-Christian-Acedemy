@@ -2,19 +2,28 @@ import React from "react";
 
 const Card = ({ Ctitle, Cage, Cdesc, Cimg }) => {
   return (
-    <div className="flex max-h-80 min-h-75 max-w-70 min-w-60 snap-center flex-col gap-y-5 rounded-2xl bg-bone p-3 inset-shadow-med">
-      <div className="relative w-full">
-        <img src={Cimg} alt="" className="rounded-lg" />
-        <div className="absolute inset-0 rounded-lg bg-black/30" />
-      </div>
-      <div className="flex items-center justify-between">
-        <span className="font-[PoppinsBold] text-base text-egg-dark">
-          {Ctitle}
-        </span>
-        <span className="text-xs text-swamp-green">{Cage}</span>
-      </div>
-      <div>
-        <p className="text-xs text-ashlight">{Cdesc}</p>
+    <div
+      className="relative flex min-h-80 min-w-60 snap-center flex-col justify-end overflow-hidden rounded-2xl p-5 text-bone inset-shadow-med duration-300 hover:scale-105 lg:h-90 lg:w-75"
+      style={{
+        backgroundImage: `url(${Cimg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-linear-to-b from-transparent to-egg-dark" />
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col gap-y-2">
+        <div className="flex items-center justify-between">
+          <span className="font-[PoppinsBold] text-base lg:text-xl">
+            {Ctitle}
+          </span>
+
+          <span className="text-xs text-bone lg:text-base">{Cage}</span>
+        </div>
+
+        <p className="text-xs lg:text-sm">{Cdesc}</p>
       </div>
     </div>
   );

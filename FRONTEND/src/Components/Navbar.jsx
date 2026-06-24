@@ -24,15 +24,42 @@ const Navbar = () => {
 
         <GreenButton onClick={() => navigate("/tuition")} Label={"Login"} />
       </div>
-      <div className="relative z-50 hidden h-20 w-full items-center justify-around bg-bone p-3 text-xs inset-shadow-med lg:flex">
-        <span className="flex items-center gap-x-2">
-          <img src="/assets/logowbg.png" alt="" className="h-8 rounded-full" />
+      <div className="relative z-50 hidden h-20 w-full items-center justify-between bg-bone p-5 px-10 text-xs inset-shadow-med lg:flex">
+        <span className="flex items-center gap-x-5">
+          <img
+            src="/assets/logowbg.png"
+            alt=""
+            className="h-8 rounded-full lg:h-12"
+          />
           <Link to="/">
-            <span className="text-lg">Grace Christian Academy</span>
+            <h1 className="text-sm tracking-[0.30em] text-ashlight">
+              Grace Christian Academy Cavite Inc. <br />
+            </h1>
+            <span className="font-[PoppinsBold] text-base text-egg-dark">
+              Grace Christian Academy
+            </span>
           </Link>
         </span>
 
-        <GreenButton onClick={() => navigate("/tuition")} Label={"Login"} />
+        <span className="flex w-50 items-center gap-x-5">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `${isActive ? " text-swamp-green" : " "} `
+            }
+          >
+            HOME
+          </NavLink>
+          <NavLink
+            to="admission"
+            className={({ isActive }) =>
+              `${isActive ? " text-swamp-green" : " "} `
+            }
+          >
+            ADMISSION
+          </NavLink>
+          <GreenButton onClick={() => navigate("/tuition")} Label={"Login"} />
+        </span>
       </div>
       {sidebar && (
         <div className="fixed top-0 z-50 h-full w-full bg-neutral-500/50">
