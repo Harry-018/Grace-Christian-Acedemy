@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../Components/Card";
 import GreenButton from "../Components/GreenButton";
-import { CheckCircle2, Brain } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import MiniCard from "../Components/MiniCard";
 
 {
@@ -21,10 +21,10 @@ import MiniCard from "../Components/MiniCard";
 }
 const HomePage = () => {
   return (
-    <div className="flex h-full w-full flex-col gap-y-5">
+    <div className="flex h-full w-full flex-col gap-y-5 md:items-center">
       {/* Banner */}
-      <div className="flex bg-linear-to-b from-swamp-green to-egg-dark text-bone">
-        <div className="flex flex-col gap-y-5 p-5">
+      <div className="flex w-full bg-linear-to-b from-swamp-green to-egg-dark text-bone">
+        <div className="flex flex-col gap-y-5 p-5 md:w-150">
           <h2 className="text-sm">Admission Now Open</h2>
           <h1 className="font-[PoppinsBold] text-xl">
             Discover a joyful preschool journey with faith, play, and learning
@@ -58,7 +58,7 @@ const HomePage = () => {
                 }
               />
               <Card
-                Cimg={"/assets/nursery.jpg"}
+                Cimg={"/assets/pre-kinder.avif"}
                 Ctitle={"Pre-Kinder"}
                 Cage={"4-5 Years old"}
                 Cdesc={
@@ -66,7 +66,7 @@ const HomePage = () => {
                 }
               />
               <Card
-                Cimg={"/assets/nursery.jpg"}
+                Cimg={"/assets/kinder.jpg"}
                 Ctitle={"Kinder"}
                 Cage={"5-6 Years old"}
                 Cdesc={
@@ -79,7 +79,7 @@ const HomePage = () => {
       </div>
 
       {/* mission vision */}
-      <div>
+      <div className="md:w-150">
         <div className="flex flex-col gap-y-2 p-5">
           <h3 className="text-base text-swamp-green">Mission</h3>
           <h1 className="font-[PoppinsBold] text-lg text-egg-dark">
@@ -110,7 +110,7 @@ const HomePage = () => {
 
       {/* Video + why parents choose us */}
       <div className="flex flex-col gap-y-5 p-5">
-        <div className="flex max-w-3xl flex-col gap-y-3">
+        <div className="flex flex-col gap-y-3">
           <span className="flex flex-col">
             <h1 className="font-[PoppinsBold] text-lg text-egg-dark">
               Grace Christian Academy
