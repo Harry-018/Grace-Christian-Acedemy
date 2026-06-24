@@ -48,7 +48,7 @@ const HomePage = () => {
             Academic Programs
           </span>
           <div className="flex overflow-hidden">
-            <div className="no-scrollbar flex gap-x-5 overflow-x-auto px-5 py-5">
+            <div className="no-scrollbar flex snap-x snap-mandatory gap-x-5 overflow-x-auto px-5 py-5">
               <Card
                 Cimg={"/assets/nursery.jpg"}
                 Ctitle={"Nursery"}
@@ -128,7 +128,9 @@ const HomePage = () => {
 
         <div>
           <div className="flex h-auto flex-col gap-y-5 rounded-2xl bg-bone p-5 inset-shadow-med">
-            <h1 className="text-sm">WHY PARENTS CHOOSE US</h1>
+            <h1 className="font-[PoppinsBold] text-sm text-swamp-green">
+              WHY PARENTS CHOOSE US
+            </h1>
             <div className="flex flex-col gap-y-4 text-xs">
               <span className="flex items-center gap-x-3">
                 <span>
