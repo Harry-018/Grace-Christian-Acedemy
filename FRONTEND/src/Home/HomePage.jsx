@@ -172,7 +172,7 @@ const HomePage = () => {
             Children Activities
           </span>
           <div className="flex overflow-hidden">
-            <div className="no-scrollbar flex gap-x-5 overflow-x-auto px-5 py-5">
+            <div className="no-scrollbar flex snap-x snap-mandatory gap-x-5 overflow-x-auto px-5 py-5">
               <MiniCard
                 descri={
                   "Learning through play strengthens problem-solving skills, memory, and the ability to think creatively and critically."

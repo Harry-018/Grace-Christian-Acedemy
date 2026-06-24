@@ -8,15 +8,15 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="sticky top-0 z-40 font-[Poppins]">
+    <div className="font-[Poppins]">
       <div className="flex w-full items-center justify-around bg-bone p-3 text-xs inset-shadow-small">
-        <MenuIcon
+        {/* <MenuIcon
           onClick={() => {
             setSideBar(!sidebar);
           }}
-        />
+        /> */}
         <span className="flex items-center gap-x-2">
-          <img src="/assets/logowbg.png" alt="" className="hidden h-8" />
+          <img src="/assets/logowbg.png" alt="" className="h-8 rounded-full" />
           <span>Grace Christian Academy</span>
         </span>
 
