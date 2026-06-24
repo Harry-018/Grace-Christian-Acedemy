@@ -1,29 +1,22 @@
 import React from "react";
 import Card from "../Components/Card";
 import GreenButton from "../Components/GreenButton";
-import { CheckCircle2 } from "lucide-react";
+import {
+  CheckCircle2,
+  LucideShieldCheck,
+  Heart,
+  SmileIcon,
+  ShieldCheck,
+  Smile,
+} from "lucide-react";
 import MiniCard from "../Components/MiniCard";
+import SideCard from "../Components/SideCard";
 
-{
-  /* <div className="flex flex-col p-5 font-[Poppins]">
-        <span className="text-start text-sm text-green-800">
-          CHILDREN ACTIVITIES
-        </span>
-
-        <MiniCard
-          icon={<Brain />}
-          Stitle={"Cognitive Development"}
-          descri={
-            "Learning through play strengthens problem-solving skills, memory, and the ability to think creatively and critically."
-          }
-        />
-      </div> */
-}
 const HomePage = () => {
   return (
-    <div className="flex h-full w-full flex-col gap-y-5 md:items-center">
+    <div className="flex h-full w-full flex-col gap-y-10">
       {/* Banner */}
-      <div className="flex w-full bg-linear-to-b from-swamp-green to-egg-dark text-bone">
+      <div className="flex w-full bg-linear-to-b from-swamp-green to-egg-dark text-bone md:justify-center">
         <div className="flex flex-col gap-y-5 p-5 md:w-150">
           <h2 className="text-sm">Admission Now Open</h2>
           <h1 className="font-[PoppinsBold] text-xl">
@@ -42,8 +35,8 @@ const HomePage = () => {
       </div>
 
       {/* cards */}
-      <div className="flex flex-col justify-center">
-        <div className="flex flex-col">
+      <div className="flex flex-col md:items-center">
+        <div className="flex flex-col md:w-150">
           <span className="px-5 font-[PoppinsBold] text-swamp-green">
             Academic Programs
           </span>
@@ -79,8 +72,9 @@ const HomePage = () => {
       </div>
 
       {/* mission vision */}
-      <div className="md:w-150">
-        <div className="flex flex-col gap-y-2 p-5">
+      <div className="md:flex md:w-full md:flex-col md:items-center">
+        {/* mission */}
+        <div className="flex flex-col gap-y-2 p-5 md:w-150">
           <h3 className="text-base text-swamp-green">Mission</h3>
           <h1 className="font-[PoppinsBold] text-lg text-egg-dark">
             Raising Godly and Lifelong Learners
@@ -93,7 +87,8 @@ const HomePage = () => {
             and in life.
           </span>
         </div>
-        <div className="flex flex-col gap-y-2 p-5">
+        {/* vision */}
+        <div className="flex flex-col gap-y-2 p-5 md:w-150">
           <span className="text-base text-swamp-green">Vision</span>
           <span className="font-[PoppinsBold] text-lg text-egg-dark">
             Teach with Love, Faith, and Excellence
@@ -109,8 +104,9 @@ const HomePage = () => {
       </div>
 
       {/* Video + why parents choose us */}
-      <div className="flex flex-col gap-y-5 p-5">
-        <div className="flex flex-col gap-y-3">
+      <div className="flex flex-col gap-y-5 md:items-center">
+        <div className="flex flex-col gap-y-3 px-5 md:w-150">
+          {/* title */}
           <span className="flex flex-col">
             <h1 className="font-[PoppinsBold] text-lg text-egg-dark">
               Grace Christian Academy
@@ -119,14 +115,18 @@ const HomePage = () => {
               Short video story from campus
             </h3>
           </span>
-
-          <video className="h-50 w-full rounded-2xl" controls>
+          {/* video */}
+          <video
+            className="h-50 w-full rounded-2xl inset-shadow-med md:h-75"
+            controls
+          >
             <source src="" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
 
-        <div>
+        <div className="flex flex-col gap-y-5 px-5 md:w-150 md:flex-row md:gap-x-5 md:gap-y-0">
+          {/* why parents choose us */}
           <div className="flex h-auto flex-col gap-y-5 rounded-2xl bg-bone p-5 inset-shadow-med">
             <h1 className="font-[PoppinsBold] text-sm text-swamp-green">
               WHY PARENTS CHOOSE US
@@ -164,14 +164,29 @@ const HomePage = () => {
               </span>
             </div>
           </div>
+          {/* side cards */}
+          <div className="flex w-full gap-x-5 md:w-40 md:flex-col md:gap-y-5">
+            <SideCard
+              Icon={
+                <ShieldCheck className="scale-150 fill-swamp-green stroke-bone stroke-1" />
+              }
+              Title={"Safety"}
+            />
+            <SideCard
+              Icon={
+                <Heart className="scale-150 fill-swamp-green stroke-bone stroke-1" />
+              }
+              Title={"Relationships"}
+            />
+          </div>
         </div>
       </div>
 
       {/* children activities */}
-      <div className="flex flex-col justify-center">
-        <div className="flex flex-col">
+      <div className="flex flex-col md:items-center">
+        <div className="lg: flex w-full flex-col md:w-150">
           <span className="px-5 font-[PoppinsBold] text-swamp-green">
-            Children Activities
+            Children Activties
           </span>
           <div className="flex overflow-hidden">
             <div className="no-scrollbar flex snap-x snap-mandatory gap-x-5 overflow-x-auto px-5 py-5">

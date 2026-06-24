@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MenuIcon, X } from "lucide-react";
 import GreenButton from "./GreenButton";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, Link } from "react-router-dom";
 
 const Navbar = () => {
   const [sidebar, setSideBar] = useState(false);
@@ -9,23 +9,34 @@ const Navbar = () => {
 
   return (
     <div className="font-[Poppins]">
-      <div className="flex w-full items-center justify-around bg-bone p-3 text-xs inset-shadow-small">
-        {/* <MenuIcon
+      <div className="relative z-50 flex w-full items-center justify-around bg-bone p-3 text-xs inset-shadow-small lg:hidden">
+        <MenuIcon
           onClick={() => {
             setSideBar(!sidebar);
           }}
-        /> */}
+        />
         <span className="flex items-center gap-x-2">
           <img src="/assets/logowbg.png" alt="" className="h-8 rounded-full" />
-          <span>Grace Christian Academy</span>
+          <Link to="/">
+            <span>Grace Christian Academy</span>
+          </Link>
         </span>
 
         <GreenButton onClick={() => navigate("/tuition")} Label={"Login"} />
       </div>
+      <div className="relative z-50 hidden h-20 w-full items-center justify-around bg-bone p-3 text-xs inset-shadow-med lg:flex">
+        <span className="flex items-center gap-x-2">
+          <img src="/assets/logowbg.png" alt="" className="h-8 rounded-full" />
+          <Link to="/">
+            <span className="text-lg">Grace Christian Academy</span>
+          </Link>
+        </span>
 
+        <GreenButton onClick={() => navigate("/tuition")} Label={"Login"} />
+      </div>
       {sidebar && (
         <div className="fixed top-0 z-50 h-full w-full bg-neutral-500/50">
-          <span className="flex h-full w-[60%] flex-col gap-y-5 bg-egg p-5">
+          <span className="flex h-full w-[60%] flex-col gap-y-5 bg-bone p-5 md:w-[30%]">
             <X
               onClick={() => {
                 setSideBar(!sidebar);

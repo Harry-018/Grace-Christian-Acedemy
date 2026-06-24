@@ -3,29 +3,32 @@ import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col gap-y-10 bg-linear-to-b from-swamp-green to-egg-dark p-5 font-[Poppins] text-bone">
+    <div className="flex flex-col gap-y-10 bg-linear-to-b from-swamp-green to-egg-dark p-5 font-[Poppins] text-bone md:flex-row md:justify-center md:gap-x-10 lg:gap-x-20">
+      {/* quick links */}
       <div className="flex flex-col gap-y-5">
         <h1 className="text-lg tracking-widest">Quick Links</h1>
-        <ul className="flex flex-col gap-y-3 text-sm">
+        <span className="flex flex-col gap-y-3 text-sm">
           <NavLink to="/">
-            <li>Home</li>
+            <span className="hover:font-[PoppinsBold]">Home</span>
           </NavLink>
           <NavLink to="transport">
-            <li>Transport</li>
+            <span className="hover:font-[PoppinsBold]"> Transport</span>
           </NavLink>
           <NavLink to="tuition">
-            <li>Tuitions</li>
+            <span className="hover:font-[PoppinsBold]">Tuitions</span>
           </NavLink>
           <NavLink to="admission">
-            <li>Admission</li>
+            <span className="hover:font-[PoppinsBold]">Admission</span>
           </NavLink>
-        </ul>
+        </span>
       </div>
+
+      {/* contact us */}
       <div className="flex flex-col gap-y-5">
         <h1 className="text-lg tracking-widest">Contact Us</h1>
 
-        <div className="flex gap-x-10">
-          <div className="flex w-[50%] flex-col gap-y-5 text-sm">
+        <div className="flex justify-between gap-x-5">
+          <div className="flex w-60 flex-col gap-y-5 text-sm">
             <div className="flex flex-col gap-y-2">
               <span className="font-[PoppinsBold]">Contact Number</span>
               <span className="text-xs">0992-641-8526</span>
@@ -42,7 +45,7 @@ const Footer = () => {
               </span>
             </div>
           </div>
-          <div className="flex w-[50%] flex-col gap-y-5 text-sm">
+          <div className="flex w-60 flex-col gap-y-5 text-sm">
             <div className="flex flex-col gap-y-2">
               <span className="font-[PoppinsBold]">Email</span>
               <span className="text-xs">grace.cslife@gmail.com</span>
