@@ -121,9 +121,10 @@ body {
   --color-beige: #f3e8d3;
   --color-egg: hsl(39, 10%, 92%);
   --color-bone: #f3f5fd;
-  --color-egg-dark: hsl(39, 5%, 5%);
+  --color-egg-dark: #3b3b3b;
   --color-lime-dark: hsl(94, 31%, 45%);
   --color-reject: #e77f78;
+  --color-ashlight: #737373;
   --breakpoint-4k: 2560px;
 
   --text-2xs: 10px;
