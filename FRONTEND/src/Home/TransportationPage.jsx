@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react'
 
 const TransportationPage = () => {
-  return <div>TransportationPage</div>;
-};
+  return (
+    <div>TransportationPage</div>
+  )
+}
 
 export default TransportationPage;
