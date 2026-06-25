@@ -1,9 +1,15 @@
 import React from 'react'
 
-const AdmissionCard = ({Atitle}) => {
+const AdmissionCard = ({ Icon, Atitle }) => {
   return (
-    <div className="flex flex-col rounded-xl font-[Poppins] gap-y-10 bg-bone">
-      <span className="flex flex-col h-30 w-30 text-xs text-center">{Atitle}</span>
+    <div className="flex flex-col justify-center gap-3 rounded-xl bg-bone p-5 font-[Poppins]">
+      <div className="text-green-600 h-20 w-20">
+        {Icon}
+      </div>
+      
+      <span className="text-xs text-center">
+        {Atitle}
+      </span>
     </div>
   )
 }
