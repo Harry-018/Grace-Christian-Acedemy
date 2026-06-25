@@ -1,9 +1,7 @@
 import { Frown } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import React from "react";
-
-const NotFound = () => {
+function NotFound() {
   return (
     <div className="flex h-screen w-screen flex-col items-center justify-center gap-y-5 bg-neutral-100 font-[Poppins]">
       <span className="flex items-center gap-x-2 text-2xl text-neutral-800 md:gap-x-3 md:text-3xl">
@@ -20,6 +18,6 @@ const NotFound = () => {
       </Link>
     </div>
   );
-};
+}
 
 export default NotFound;
