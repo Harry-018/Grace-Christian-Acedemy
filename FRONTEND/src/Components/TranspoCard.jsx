@@ -1,7 +1,7 @@
 import React from "react";
 
-const TransopoCard = () => {
+const TranspoCard = () => {
   return <div>TransopoCard</div>;
 };
 
-export default TransopoCard;
+export default TranspoCard;
