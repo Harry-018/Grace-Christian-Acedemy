@@ -1,4 +1,5 @@
 import React from "react";
+import TransopoCard from "../Components/TransopoCard";
 
 const TransportationPage = () => {
   return (
@@ -11,6 +12,11 @@ const TransportationPage = () => {
           <span className="w-0.5 bg-ashlight"></span>
           <h2>Scheduled twice a day</h2>
         </span>
+
+        {/* lowerdive */}
+        <div>
+          <TransopoCard />
+        </div>
       </div>
     </div>
   );
