@@ -46,6 +46,8 @@ const TransportationPage = () => {
               </div>
             </div>
           ))}
+
+          {/* this section wont render on vercel because its using a localhost as it's api */}
         </div>
       </div>
     </div>
