@@ -6,12 +6,12 @@ import Copyright from "../Components/Copyright";
 
 const RootLayout = () => {
   return (
-    <div className="flex flex-col justify-between">
+    <div className="flex min-h-screen flex-col">
       <Navbar />
 
-      <div className="flex h-full justify-center bg-egg font-[Poppins] text-egg-dark">
+      <main className="flex flex-1 justify-center bg-egg font-[Poppins] text-egg-dark">
         <Outlet />
-      </div>
+      </main>
 
       <Footer />
       <Copyright />

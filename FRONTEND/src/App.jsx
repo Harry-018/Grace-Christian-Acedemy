@@ -15,15 +15,26 @@ import TransportationPage from "./Home/TransportationPage.jsx";
 import Admission from "./Home/Admission.jsx";
 import TuitionPage from "./Home/TuitionPage.jsx";
 import RootLayout from "./Layout/RootLayout.jsx";
+import TranspoLayout from "./Layout/TranspoLayout.jsx";
+import NotFound from "./Components/NotFound.jsx";
+import { transpoLoader } from "./API/transpoLoader.js";
 
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="transport" element={<TransportationPage />} />
+        <Route path="transport" element={<TranspoLayout />}>
+          <Route
+            index
+            element={<TransportationPage />}
+            loader={transpoLoader}
+          />
+        </Route>
         <Route path="admission" element={<Admission />} />
         <Route path="tuition" element={<TuitionPage />} />
+
+        <Route path="*" element={<NotFound />} />
       </Route>,
     ),
   );
