@@ -47,7 +47,7 @@ const TransportationPage = () => {
             </div>
           ))}
 
-          {/* this section wont render on vercel because its using a localhost as it's api */}
+          {/* this section wont render on vercel because its using a localhost as it's api yah yah yah*/}
         </div>
       </div>
     </div>
