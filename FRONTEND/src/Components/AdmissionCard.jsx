@@ -1,17 +1,15 @@
-import React from 'react'
+import React from "react";
 
 const AdmissionCard = ({ Icon, Atitle }) => {
   return (
-    <div className="flex flex-col justify-center gap-3 rounded-xl bg-bone p-5 font-[Poppins]">
-      <div className="text-green-600 h-20 w-20">
+    <div className="flex w-full max-w-lg flex-col items-center justify-center gap-3 rounded-xl bg-bone p-5 text-center font-[Poppins] shadow-sm sm:w-56 md:w-60">
+      <div className="flex h-16 w-16 items-center justify-center text-swamp-green sm:h-20 sm:w-20">
         {Icon}
       </div>
-      
-      <span className="text-xs text-center">
-        {Atitle}
-      </span>
-    </div>
-  )
-}
 
-export default AdmissionCard
+      <span className="text-sm sm:text-base">{Atitle}</span>
+    </div>
+  );
+};
+
+export default AdmissionCard;

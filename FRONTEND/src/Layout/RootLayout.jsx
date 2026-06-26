@@ -9,7 +9,7 @@ const RootLayout = () => {
     <div className="flex flex-col justify-between">
       <Navbar />
 
-      <div className="flex h-full justify-center bg-egg font-[Poppins] text-egg-dark">
+      <div className="h-full justify-center bg-egg font-[Poppins] text-egg-dark">
         <Outlet />
       </div>
 
