@@ -6,9 +6,7 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import React from "react";
 
-// import pages
 import Navbar from "./Components/Navbar.jsx";
 import HomePage from "./Home/HomePage.jsx";
 import TransportationPage from "./Home/TransportationPage.jsx";
@@ -25,7 +23,7 @@ const App = () => {
         <Route path="transport" element={<TransportationPage />} />
         <Route path="admission" element={<Admission />} />
         <Route path="tuition" element={<TuitionPage />} />
-        <Route path="admission-form" element={<Form />} />
+        <Route path="form" element={<Form />} />
       </Route>,
     ),
   );
