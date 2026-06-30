@@ -1,46 +1,53 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 import { User, Lock } from "lucide-react";
-import LoginButton from "./Components/Buttons/LoginButton.jsx";
-import InputFull from "./Components/Inputs/InputFull.jsx";
+import LoginButton from "./Components/GreenButton.jsx";
 
 function Login() {
   return (
-    <div className="flex h-screen w-screen items-center justify-center bg-neutral-200 font-[Poppins]">
-      <div className="inset-shadow-md z-10 flex h-auto w-[90%] flex-col items-center justify-center space-y-5 rounded-4xl bg-neutral-100 px-5 py-10 inset-shadow-xlar md:w-[45%] lg:h-115 lg:w-110 lg:p-0">
-        <div className="flex items-center">
-          <img src="/assets/logo.png" alt="GCA Logo" className="w-20" />
-          <p className="font-[PoppinsBold] text-sm leading-4 lg:text-lg">
-            GRACE CHRISTIAN <br /> ACADEMY OF CAVITE INC.
-          </p>
+    <div className="flex h-screen w-screen items-center justify-center bg-egg font-[Poppins]">
+      <div className="flex h-[50%] w-auto flex-col items-center justify-between rounded-2xl bg-bone p-5 inset-shadow-med">
+        <div className="flex items-center justify-center gap-2 font-[PoppinsBold]">
+          <img
+            src="/assets/logowbg.png"
+            alt="Logo"
+            className="h-10 rounded-full"
+          />
+          <h1 className="text-sm leading-4">
+            Grace Christian <br /> Academy of Cavite Inc.
+          </h1>
         </div>
-
-        <div className="flex w-full flex-col items-center gap-y-10">
-          <h1 className="font-[PoppinsBold] text-xl">Welcome</h1>
-          <div className="flex w-[95%] flex-col items-center gap-y-2 lg:gap-y-3">
-            <h1 className="text-2xs opacity-60 lg:text-xs">
-              Login using your Grace Christian Academy Account
-            </h1>
-
-            <div className="relative w-full lg:w-[90%]">
-              <User className="absolute top-1/2 left-3 hidden -translate-y-1/2 text-gray-400 lg:block" />
-              <InputFull
-                InputType={"text"}
-                InputId={"TeacherUsername"}
-                InputPlaceholder={"Username"}
-              />
-            </div>
-
-            <div className="relative w-full lg:w-[90%]">
-              <Lock className="absolute top-1/2 left-3 hidden -translate-y-1/2 text-gray-400 lg:block" />
-              <InputFull
-                InputType={"password"}
-                InputId={"TeacherPassword"}
-                InputPlaceholder={"Password"}
-              />
-            </div>
-
-            <Link to="Dashboard" className="w-full lg:w-[90%]">
-              <LoginButton />
+        <div className="font-[PoppinsBold] text-swamp-green">Welcome</div>
+        <div className="flex flex-col gap-y-3">
+          <h1 className="text-center text-xs text-ashlight">
+            Login with your grace christian academy account
+          </h1>
+          <div className="flex flex-col gap-y-2">
+            <input
+              type="email"
+              className="text-bg-egg-dark w-full rounded-md border-0 text-xs ring-1 ring-swamp-green focus:border-0 focus:ring-2"
+              placeholder="Email"
+            />
+            <input
+              type="password"
+              className="text-bg-egg-dark w-full rounded-md border-0 text-xs ring-1 ring-swamp-green focus:border-0 focus:ring-2"
+              placeholder="password"
+            />
+          </div>
+          <div>
+            <Link to="/admin" className="w-full">
+              <button
+                type="submit"
+                className="w-full cursor-pointer rounded-md bg-swamp-green p-2 font-[PoppinsBold] text-sm text-egg inset-shadow-small duration-200 active:scale-95"
+              >
+                Enter
+              </button>
+            </Link>
+            <Link to="/" className="w-full">
+              <button className="w-full cursor-pointer rounded-md p-2 text-sm text-egg-dark duration-200 active:scale-95">
+                Go Back
+              </button>
             </Link>
           </div>
         </div>

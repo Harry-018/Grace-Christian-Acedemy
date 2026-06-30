@@ -20,7 +20,7 @@ const TransportationPage = () => {
 
       {/* lowerdiv */}
       <div className="flex h-150 flex-col overflow-hidden py-5 md:h-auto md:w-160 lg:w-250 xl:w-300">
-        <h3 className="px-5 font-[PoppinsBold] text-swamp-green lg:text-lg">
+        <h3 className="px-5 py-5 font-[PoppinsBold] text-swamp-green lg:text-lg">
           Location Estimate
         </h3>
 
@@ -46,9 +46,19 @@ const TransportationPage = () => {
               </div>
             </div>
           ))}
-
           {/* this section wont render on vercel because its using a localhost as it's api yah yah yah*/}
         </div>
+      </div>
+
+      <div className="p-5 text-bone md:w-160 lg:w-250 xl:w-300">
+        <p className="rounded-2xl bg-forest-green p-5 text-justify text-sm inset-shadow-med lg:text-sm">
+          Note: These rates are based on standard routes. The final
+          transportation fee may vary depending on the exact pickup location and
+          van availability. If you would like to avail of the transportation
+          service, please first visit the school on your selected schedule.
+          Kindly coordinate with the school office for further assistance. Thank
+          You!
+        </p>
       </div>
     </div>
   );
