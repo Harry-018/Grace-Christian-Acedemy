@@ -126,7 +126,7 @@ body {
   --color-reject: #e77f78;
   --color-ashlight: #737373;
   --breakpoint-4k: 2560px;
-
+  --breakpoint-xs: 425px;
   --text-2xs: 10px;
 
   --inset-shadow-small:

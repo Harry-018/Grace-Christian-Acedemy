@@ -22,7 +22,7 @@ const Navbar = () => {
           </Link>
         </span>
 
-        <GreenButton onClick={() => navigate("/tuition")} Label={"Login"} />
+        <GreenButton onClick={() => navigate("/Login")} Label={"Login"} />
       </div>
       <div className="relative z-50 hidden h-20 w-full items-center justify-between bg-bone p-5 px-10 text-xs inset-shadow-med lg:flex">
         <span className="flex items-center gap-x-5">
@@ -58,7 +58,7 @@ const Navbar = () => {
           >
             ADMISSION
           </NavLink>
-          <GreenButton onClick={() => navigate("/tuition")} Label={"Login"} />
+          <GreenButton onClick={() => navigate("/Login")} Label={"Login"} />
         </span>
       </div>
       {sidebar && (
