@@ -13,6 +13,8 @@ import TransportationPage from "./Home/TransportationPage.jsx";
 import Admission from "./Home/Admission.jsx";
 import TuitionPage from "./Home/TuitionPage.jsx";
 import Form from "./Home/Form.jsx";
+import Parents from "./Home/Parents.jsx";
+import ParentsHeader from "./Components/ParentsHeader.jsx";
 import RootLayout from "./Layout/RootLayout.jsx";
 
 const App = () => {
@@ -24,6 +26,7 @@ const App = () => {
         <Route path="admission" element={<Admission />} />
         <Route path="tuition" element={<TuitionPage />} />
         <Route path="form" element={<Form />} />
+        <Route path="parents" element={<Parents />} />
       </Route>,
     ),
   );
