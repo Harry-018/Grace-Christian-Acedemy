@@ -1,9 +1,19 @@
 import React from "react";
 
-export const FieldRow = ({ children }) => (
+export const Row = ({ children }) => (
   <div className="flex flex-col md:flex-row md:gap-4">
     {children}
   </div>
+);
+
+export const FieldRow = Row;
+
+export const SectionLabel = ({ title }) => (
+  <p className="text-2xs font-bold uppercase tracking-widest text-[#7A8C4E] mb-3">{title}</p>
+);
+
+export const Divider = () => (
+  <div className="border-t border-dashed border-gray-200 my-5" />
 );
 
 export const TextInput = ({ label, value, onChange, required }) => (

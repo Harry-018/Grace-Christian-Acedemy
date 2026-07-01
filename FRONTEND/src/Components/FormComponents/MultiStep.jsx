@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ProgressBar, NavButtons } from "./FormComponents";
-import { Step1_StudentInfo, Step2_Guardian, Step3_Review } from "./Steps";
+import { Step1, Step2, Step3 } from "./Steps";
 
 //  Initial States 
 
@@ -14,9 +14,12 @@ const initialAddress = {
 };
 
 const initialGuardian = {
-  fatherName: "", fatherOccupation: "", fatherContact: "", fatherEmail: "",
-  motherName: "", motherOccupation: "", motherContact: "", motherEmail: "",
-  guardianName: "", guardianRelation: "", guardianContact: "",
+  fatherLastName: "", fatherFirstName: "", fatherMiddleName: "",
+  fatherOccupation: "", fatherContact: "", fatherEmail: "",
+  motherLastName: "", motherFirstName: "", motherMiddleName: "",
+  motherOccupation: "", motherContact: "", motherEmail: "",
+  guardianLastName: "", guardianFirstName: "", guardianMiddleName: "",
+  guardianRelation: "", guardianContact: "",
 };
 
 //  Success Screen 
@@ -79,21 +82,21 @@ export default function MultiStep() {
       <ProgressBar currentStep={step} totalSteps={TOTAL_STEPS} />
 
       {step === 1 && (
-        <Step1_StudentInfo
+        <Step1
           student={student}
           address={address}
-          onStudentChange={updateStudent}
-          onAddressChange={updateAddress}
+          onStudent={updateStudent}
+          onAddress={updateAddress}
         />
       )}
-      {step === 2 && <Step2_Guardian data={guardian} onChange={updateGuardian} />}
+      {step === 2 && <Step2 guardian={guardian} onGuardian={updateGuardian} />}
       {step === 3 && (
-        <Step3_Review
+        <Step3
           student={student}
           address={address}
           guardian={guardian}
           consent={consent}
-          onConsentChange={setConsent}
+          onConsent={setConsent}
         />
       )}
 
